@@ -1,7 +1,10 @@
 package com.cleanarchitecture.presentation.news
 
 import androidx.lifecycle.ViewModel
+import com.cleanarchitecture.presentation.base.BaseViewModel
 
-class NewsViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class NewsViewModel : BaseViewModel() {
+
+
+
 }

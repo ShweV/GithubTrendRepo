@@ -6,27 +6,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.cleanarchitecture.presentation.R
+import com.cleanarchitecture.presentation.base.BaseFragment
+import kotlinx.android.synthetic.main.news_fragment.*
 
-class NewsFragment : Fragment() {
+class NewsFragment : BaseFragment<NewsViewModel>() {
 
-    companion object {
-        fun newInstance() = NewsFragment()
+    override fun setLayout(): Int {
+       return R.layout.news_fragment
     }
 
-    private lateinit var viewModel: NewsViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.news_fragment, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(NewsViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        news_recycler.adapter = NewsAdapter()
     }
-
 }
