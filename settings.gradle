@@ -1,5 +1,9 @@
-include ':presentation'
+include ':data'
+include ':data'
+include ':mylibrary'
 include ':domain'
+include ':data'
+include ':presentation'
 include ':data'
 include ':app'
 rootProject.name = "GithubTrendRepo"
